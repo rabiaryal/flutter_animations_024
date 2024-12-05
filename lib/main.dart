@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations_024/animations/circularanimation.dart';
-import 'package:flutter_animations_024/animations/rotatingrectanimation.dart';
 import 'package:flutter_animations_024/homepage.dart';
 
 void main() {
