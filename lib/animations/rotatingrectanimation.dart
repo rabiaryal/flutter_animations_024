@@ -31,10 +31,6 @@ class _RotatingRectAnimatiosnState extends State<RotatingRectAnimatiosn>
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Animations"),
-        centerTitle: true,
-      ),
       body: Center(
         child: AnimatedBuilder(
           animation: _controller,

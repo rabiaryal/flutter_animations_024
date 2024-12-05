@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations_024/circularanimation.dart';
-import 'package:flutter_animations_024/homescree.dart';
+import 'package:flutter_animations_024/animations/circularanimation.dart';
+import 'package:flutter_animations_024/animations/rotatingrectanimation.dart';
+import 'package:flutter_animations_024/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: CircularAnimation(),
+      home: HomePageScreen(),
+      // CircularAnimation(),
     );
   }
 }
