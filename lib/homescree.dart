@@ -33,6 +33,7 @@ class _RotatingRectAnimatiosnState extends State<RotatingRectAnimatiosn>
     return Scaffold(
       appBar: AppBar(
         title: const Text("Animations"),
+        centerTitle: true,
       ),
       body: Center(
         child: AnimatedBuilder(
