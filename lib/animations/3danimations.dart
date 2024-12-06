@@ -119,10 +119,32 @@ class _ThreeDAnimationsState extends State<ThreeDAnimations>
                         ),
                       ),
 
+                      // back
                       Container(
                         color: Colors.green,
                         width: widthAndHeight,
                         height: widthAndHeight,
+                      ),
+                      // top side
+
+                      Transform(
+                        alignment: Alignment.topCenter,
+                        transform: Matrix4.identity()..rotateX(-pi / 2.0),
+                        child: Container(
+                          color: Colors.yellow,
+                          width: widthAndHeight,
+                          height: widthAndHeight,
+                        ),
+                      ),
+//  buttom side
+                      Transform(
+                        alignment: Alignment.bottomCenter,
+                        transform: Matrix4.identity()..rotateX(pi / 2.0),
+                        child: Container(
+                          color: Colors.brown,
+                          width: widthAndHeight,
+                          height: widthAndHeight,
+                        ),
                       ),
                     ],
                   ),
