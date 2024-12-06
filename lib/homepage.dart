@@ -42,6 +42,15 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           builder: (context) => CircularAnimation()));
                 },
                 buttonName: "Flip Circular Animations"),
+
+                RoundButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CircularAnimation()));
+                },
+                buttonName: "3D- Animations"),
           ],
         ),
       ),
