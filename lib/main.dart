@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations_024/animations/3danimations.dart';
 import 'package:flutter_animations_024/homepage.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: HomePageScreen(),
+      home: ThreeDAnimations()
       // CircularAnimation(),
     );
   }
