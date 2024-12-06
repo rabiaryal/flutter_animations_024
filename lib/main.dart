@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_animations_024/homepage.dart';
+import 'package:flutter_animations_024/otheranimation/heroanimation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: HomePageScreen(),
+      home: HeroAnimation()
+      // HomePageScreen(),
       // CircularAnimation(),
     );
   }
