@@ -10,10 +10,36 @@ class ImplictAnimation extends StatefulWidget {
 const defaultWidth = 100.0;
 
 class _ImplictAnimationState extends State<ImplictAnimation> {
-  var _isZoomedIN = false;
-  var _buttonTitle = 'Zoom In';
-  var _width = defaultWidth;
-  var _curve = Curves.bounceOut;
+  var _isZoomedIn = false;
+  // var _buttonTitle = 'Zoom In';
+  // var _width = defaultWidth;
+  // var _curve = Curves.bounceOut;
+
+  // Dynamically calculates properties based on the current state
+  String get buttonTitle => _isZoomedIn ? 'Zoom Out' : 'Zoom In';
+  double get animatedWidth =>
+      (_isZoomedIn ? MediaQuery.of(context).size.width : defaultWidth) *
+      _currentSliderValue;
+  Curve get animationCurve =>
+      _isZoomedIn ? Curves.bounceInOut : Curves.bounceOut;
+
+  void toggleZoom() {
+    setState(() {
+      _isZoomedIn = !_isZoomedIn;
+    });
+  }
+
+  double _currentSliderValue = 0;
+
+  // void callChnageValue(double x) {
+  //   setState(() {
+  //     _isZoomedIn = !_isZoomedIn;
+  //     _buttonTitle = _isZoomedIn ? 'Zoom Out ' : 'Zoom In';
+  //     _width = _isZoomedIn ? MediaQuery.of(context).size.width : defaultWidth;
+  //     _curve = _isZoomedIn ? Curves.bounceInOut : Curves.bounceOut;
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,24 +55,48 @@ class _ImplictAnimationState extends State<ImplictAnimation> {
             children: [
               AnimatedContainer(
                 duration: const Duration(milliseconds: 1000),
-                curve: _curve,
-                width: _width,
+                curve: animationCurve,
+                width: animatedWidth,
                 child: Image.asset('assets/images/wallpaper image.jpg'),
               ),
             ],
           ),
-          TextButton(
-              onPressed: () {
+          SizedBox(
+            height: 40,
+          ),
+          Slider(
+              value: _currentSliderValue,
+              min: 0.1,
+              max: 1,
+              divisions: 10,
+              label: _currentSliderValue.toStringAsFixed(1),
+              onChanged: (double value) {
                 setState(() {
-                  _isZoomedIN = !_isZoomedIN;
-                  _buttonTitle = _isZoomedIN ? 'Zoom Out ' : 'Zoom In';
-                  _width = _isZoomedIN
-                      ? MediaQuery.of(context).size.width
-                      : defaultWidth;
-                  _curve = _isZoomedIN ? Curves.bounceInOut : Curves.bounceOut;
+                  _currentSliderValue = value;
+                  // _isZoomedIn = !_isZoomedIn;
+                  // _buttonTitle = _isZoomedIn ? 'Zoom Out ' : 'Zoom In';
+                  // _width = _isZoomedIn
+                  //     ? MediaQuery.of(context).size.width * _currentSliderValue
+                  //     : defaultWidth * _currentSliderValue;
+                  // _curve = _isZoomedIn ? Curves.bounceInOut : Curves.bounceOut;
                 });
-              },
-              child: Text(_buttonTitle)),
+              }),
+          const SizedBox(
+            height: 70,
+          ),
+          TextButton(
+              onPressed: toggleZoom,
+
+              // setState(() {
+              //   _isZoomedIn = !_isZoomedIn;
+              //   _buttonTitle = _isZoomedIn ? 'Zoom Out ' : 'Zoom In';
+              //   _width = _isZoomedIn
+              //       ? MediaQuery.of(context).size.width
+              //       : defaultWidth;
+              //   _curve = _isZoomedIn ? Curves.bounceInOut : Curves.bounceOut;
+              // });
+
+              child: Text(buttonTitle)),
         ],
       ),
     );

@@ -82,10 +82,8 @@ class _HomePageScreenState extends State<HomePageScreen> {
             ),
             RoundButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => TweenColorAnm()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => TweenColorAnm()));
                 },
                 buttonName: "Change Colors"),
           ],
