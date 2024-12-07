@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_024/animations/3danimations.dart';
 import 'package:flutter_animations_024/animations/circularanimation.dart';
+import 'package:flutter_animations_024/animations/implictanimaton.dart';
 import 'package:flutter_animations_024/animations/rotatingrectanimation.dart';
 import 'package:flutter_animations_024/otheranimation/heroanimation.dart';
 
@@ -64,6 +65,28 @@ class _HomePageScreenState extends State<HomePageScreen> {
                       MaterialPageRoute(builder: (context) => HeroAnimation()));
                 },
                 buttonName: "Hero Animation"),
+            const SizedBox(
+              height: 15,
+            ),
+            RoundButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ImplictAnimation()));
+                },
+                buttonName: "Zoom IN and OUT"),
+            const SizedBox(
+              height: 15,
+            ),
+            RoundButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ImplictAnimation()));
+                },
+                buttonName: "Change Colors"),
           ],
         ),
       ),
