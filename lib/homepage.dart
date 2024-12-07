@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_024/animations/3danimations.dart';
 import 'package:flutter_animations_024/animations/circularanimation.dart';
+import 'package:flutter_animations_024/animations/colortweenanm.dart';
 import 'package:flutter_animations_024/animations/implictanimaton.dart';
 import 'package:flutter_animations_024/animations/rotatingrectanimation.dart';
 import 'package:flutter_animations_024/otheranimation/heroanimation.dart';
@@ -84,7 +85,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ImplictAnimation()));
+                          builder: (context) => TweenColorAnm()));
                 },
                 buttonName: "Change Colors"),
           ],

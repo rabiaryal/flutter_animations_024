@@ -17,9 +17,12 @@ class _RotatingRectAnimatiosnState extends State<RotatingRectAnimatiosn>
   void initState() {
     super.initState();
     _controller =
+    // vsync is used to synchromize with the display refreshrate
         AnimationController(vsync: this, duration: const Duration(seconds: 2));
 
     _animation = Tween<double>(begin: 0.0, end: 2 * pi).animate(_controller);
+
+    // it is used to interploate i.e calculatinf intermediate values
     _controller.repeat();
   }
 

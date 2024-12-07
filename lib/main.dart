@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations_024/animations/colortweenanm.dart';
-import 'package:flutter_animations_024/animations/implictanimaton.dart';
+
 
 import 'package:flutter_animations_024/homepage.dart';
-import 'package:flutter_animations_024/otheranimation/heroanimation.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -24,8 +23,8 @@ class MyApp extends StatelessWidget {
       home:
           // ImplictAnimation()
           //  HeroAnimation()
-          // HomePageScreen(),
-          TweenColorAnm()
+          HomePageScreen(),
+      // TweenColorAnm()
       // CircularAnimation(),
     );
   }
