@@ -14,6 +14,16 @@ class HomePageScreen extends StatefulWidget {
 }
 
 class _HomePageScreenState extends State<HomePageScreen> {
+  Widget _intoNextPage(Widget pageName, String pageTitle) {
+    return RoundButton(
+      buttonName: pageTitle,
+      onPressed: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => pageName));
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,65 +37,27 @@ class _HomePageScreenState extends State<HomePageScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            RoundButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => RotatingRectAnimatiosn()));
-                },
-                buttonName: "Rectangular Animation"),
+            _intoNextPage(RotatingRectAnimatiosn(), "Rectangular Animation"),
             const SizedBox(
               height: 20,
             ),
-            RoundButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CircularAnimation()));
-                },
-                buttonName: "Flip Circular Animations"),
+            _intoNextPage(CircularAnimation(), "Flip Circular Animations"),
             const SizedBox(
               height: 15,
             ),
-            RoundButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ThreeDAnimations()));
-                },
-                buttonName: "3D- Animations"),
+            _intoNextPage(ThreeDAnimations(), "3D- Animations"),
             const SizedBox(
               height: 15,
             ),
-            RoundButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HeroAnimation()));
-                },
-                buttonName: "Hero Animation"),
+            _intoNextPage(HeroAnimation(), "Hero Animation"),
             const SizedBox(
               height: 15,
             ),
-            RoundButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ImplictAnimation()));
-                },
-                buttonName: "Zoom IN and OUT"),
+            _intoNextPage(ImplictAnimation(), "Zoom IN and OUT"),
             const SizedBox(
               height: 15,
             ),
-            RoundButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TweenColorAnm()));
-                },
-                buttonName: "Change Colors"),
+            _intoNextPage(TweenColorAnm(), "Chnage Colors"),
           ],
         ),
       ),

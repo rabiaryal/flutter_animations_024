@@ -29,7 +29,7 @@ class _ImplictAnimationState extends State<ImplictAnimation> {
     });
   }
 
-  double _currentSliderValue = 0;
+  double _currentSliderValue = 0.1;
 
   // void callChnageValue(double x) {
   //   setState(() {
