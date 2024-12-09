@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animations_024/animations/3danimations.dart';
 import 'package:flutter_animations_024/animations/circularanimation.dart';
 import 'package:flutter_animations_024/animations/colortweenanm.dart';
+import 'package:flutter_animations_024/animations/drawerwidget.dart';
 import 'package:flutter_animations_024/animations/implictanimaton.dart';
 import 'package:flutter_animations_024/animations/rotatingrectanimation.dart';
+import 'package:flutter_animations_024/animations/shpaeanm.dart';
 import 'package:flutter_animations_024/otheranimation/heroanimation.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -58,6 +60,14 @@ class _HomePageScreenState extends State<HomePageScreen> {
               height: 15,
             ),
             _intoNextPage(TweenColorAnm(), "Chnage Colors"),
+            const SizedBox(
+              height: 15,
+            ),
+            _intoNextPage(DrawerHomePage(), "Show Drawer"),
+            const SizedBox(
+              height: 15,
+            ),
+            _intoNextPage(ShapeAnimations(), "Shape Animation"),
           ],
         ),
       ),
