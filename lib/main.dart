@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations_024/animations/shpaeanm.dart';
-import 'package:flutter_animations_024/homepage.dart';
-import 'package:flutter_animations_024/ownanimation/doorrect.dart';
+import 'package:flutter_animations_024/animations/drawerwidget.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -14,15 +13,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(brightness: Brightness.dark),
-        darkTheme: ThemeData(brightness: Brightness.dark),
-        themeMode: ThemeMode.dark,
-        debugShowCheckedModeBanner: false,
-        debugShowMaterialGrid: false,
-        home: ShapeAnimations()
+      theme: ThemeData(brightness: Brightness.dark),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
+      home: DrawerHomePage(),
 
-        // HomePageScreen(),
+      //  DrawerWidgets(child: child, drawer: drawer)
 
-        );
+      // ShapeAnimations()
+
+      // HomePageScreen(),
+    );
   }
 }
